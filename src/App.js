@@ -1,19 +1,36 @@
-import React from 'react';
-import Navigation from './Navigation/Navigation';
-//import Logo from './Logo/logo';
-import './App.css';
+import React, { useState } from 'react';
+import Login from './components/Login';
 
-class App extends React.Component{
-  render(){
-    return(
-      <div className="App">
-        <Navigation />
-        
-        
-      </div>
-      );
+
+/*function App(){
+  
+  const admin = {
+    email:"admin@gmail.com",
+    password:"administrador"
   }
+
+
+const [user, setUser] = useState({name: "", email: ""});
+const [error, setError] = useState("");
+
+const Login = details => {
+  console.log(details);
 }
-        
+
+const Logout = () => {
+  console.log("Logout");
+}
+
+
+  return (
+     
+          <Login />
+      
+
+      
+    );
+}*/ 
+
+const App = () => <Login />
   
 export default App;
