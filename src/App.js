@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import Login from './components/Login';
 
+
 function App() {
   const adminUser = {
-    email: "admin@gmail.com",
-    password: "admin75"
+    email: "juancito@gmail.com",
+    password: "juancito75"
   }
   const [user, setUser] = useState({name: "", email: ""});
   const [error, setError] = useState("");
 
-  const Login = details => {
+  const login = details => {
     console.log(details);
 
-    if (details.email == adminUser.email && details.password == adminUser.password){
+    if (details.email === adminUser.email && details.password === adminUser.password){
       console.log("Logged in");
       setUser({
         name: details.name,
@@ -30,15 +31,16 @@ function App() {
 
   return (
     <div className="App">
-      {(user.email != "") ? (
-        <div className="welcome">
+      {(user.email !== "") ? (
+       <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
           <button onClick={Logout}>Logout</button>
         </div>
-        ) : (
-        <Login Login={Login} error={error} />
+         ) : (
+        <Login login={login} error={error} />
         )}
     </div>
+    
     );
 }
 
