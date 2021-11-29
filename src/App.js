@@ -3,7 +3,7 @@ import Login from './components/Login';
 
 
 function App() {
-  const adminUser = {
+ const adminUser = {
     email: "juancito@gmail.com",
     password: "juancito75"
   }
@@ -25,11 +25,11 @@ function App() {
     }
   }
 
-  const Logout = () => {
+ const Logout = () => {
     setUser ({ name: "", email: ""});
   }
-
-  return (
+  
+    return (
     <div className="App">
       {(user.email !== "") ? (
        <div className="welcome">
@@ -41,7 +41,8 @@ function App() {
         )}
     </div>
     
-    );
+     );
+         
 }
 
 
