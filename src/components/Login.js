@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-function Login({ login, error }) {
+
+
+
+function Login({ login, error, SignUp }) {
 	const [details, setDetails] = useState({username: "", email: "", password: ""});
 
 	const submitHandler = e => {
@@ -8,6 +11,8 @@ function Login({ login, error }) {
 
 		login(details);
 	}
+
+
 
 	return (
 		<form onSubmit={submitHandler}>	
@@ -29,8 +34,10 @@ function Login({ login, error }) {
 				<div className="form-group">
 					<input type="submit" value="Login"/>	
 				</div>
-				<span className="form-input-login">Todavia no te registraste? Hazlo <a href="C:\Users\Juan Forni\Desktop\LoginReact\src\FormSignUp.js">Aqui</a>
-				</span>
+				<div className="form-group">
+					<input className="registrate" type="button" value="Registrate" onClick={SignUp}/>	
+				</div>
+			
 			</div>
 		</form>
 		);

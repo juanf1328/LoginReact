@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import Login from './components/Login';
+import { useState, useEffect } from 'react';
+//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+
 
 
 function App() {
@@ -13,7 +18,7 @@ function App() {
   const login = details => {
     console.log(details);
 
-    if (details.email === adminUser.email && details.password === adminUser.password){
+   if (details.email === adminUser.email && details.password === adminUser.password){
       console.log("Logged in");
       setUser({
         name: details.name,
@@ -28,23 +33,39 @@ function App() {
  const Logout = () => {
     setUser ({ name: "", email: ""});
   }
+
+ 
+  const SignUp = (props) => {
+    const [isLoading, setIsLoading] = useState(false)
+    const buttonHandler = () => {
+      setIsLoading(current => !current)
+    }
   
-    return (
+    useEffect( () => {
+      console.log(isLoading);
+  }, [isLoading]);
+  
+  return (
+    
+   
+
     <div className="App">
+       <button onClick={buttonHandler} type="button">
+        Change (now {"" + isLoading})
+      </button>
+       {isLoading? "Loading...": null}
       {(user.email !== "") ? (
        <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
           <button onClick={Logout}>Logout</button>
         </div>
          ) : (
-        <Login login={login} error={error} />
+        <Login login={login} error={error} SignUp={SignUp} />
         )}
     </div>
     
-     );
-         
+  );
+         }
+
 }
-
-
-  
 export default App;

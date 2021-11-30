@@ -3,7 +3,7 @@ import UseForm from './useForm';
 import validate from './validateInfo';
 import './Form.css';
 
-const formSignUp = (submitForm) => {
+const SignUp = (submitForm) => {
 
 const {handleChange, values, handleSubmit, errors} = UseForm(submitForm, validate);
 
@@ -41,4 +41,4 @@ const {handleChange, values, handleSubmit, errors} = UseForm(submitForm, validat
 
 }
 
-export default formSignUp;
+export default SignUp;
