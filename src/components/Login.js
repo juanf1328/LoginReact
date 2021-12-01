@@ -34,9 +34,7 @@ function Login({ login, error, SignUp }) {
 				<div className="form-group">
 					<input type="submit" value="Login"/>	
 				</div>
-				<div className="form-group">
-					<input className="registrate" type="button" value="Registrate" onClick={SignUp}/>	
-				</div>
+				<button onClick={this.SignUp}></button>
 			
 			</div>
 		</form>

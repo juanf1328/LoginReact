@@ -1,8 +1,9 @@
 import React from 'react';
-
+import SignUp from './formSignUp';
 import Login from './components/Login';
-import { useState, useEffect } from 'react';
-//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { useState } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { render } from 'react';
 
 
 
@@ -35,7 +36,7 @@ function App() {
   }
 
  
-  const SignUp = (props) => {
+ /*const SignUpp = (props) => {
     const [isLoading, setIsLoading] = useState(false)
     const buttonHandler = () => {
       setIsLoading(current => !current)
@@ -44,28 +45,27 @@ function App() {
     useEffect( () => {
       console.log(isLoading);
   }, [isLoading]);
-  
-  return (
-    
-   
+ */
 
-    <div className="App">
-       <button onClick={buttonHandler} type="button">
-        Change (now {"" + isLoading})
-      </button>
-       {isLoading? "Loading...": null}
-      {(user.email !== "") ? (
-       <div className="welcome">
-          <h2>Welcome, <span>{user.name}</span></h2>
+  render() 
+    return <>
+      
+    <BrowserRouter>
+   <div className="app">
+        <Routes> 
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/formSignUp" element={<SignUp/>}/>
+        </Routes>
+      
+    <h2>Welcome, <span>{user.name}</span></h2>
           <button onClick={Logout}>Logout</button>
-        </div>
-         ) : (
-        <Login login={login} error={error} SignUp={SignUp} />
-        )}
-    </div>
-    
-  );
-         }
+  </div>
+</BrowserRouter>
+  ) : (
+    <Login login={login} error={error} SignUp={SignUp} />
+    );
+    </>
 
-}
+  }
+
 export default App;

@@ -3,13 +3,13 @@ import UseForm from './useForm';
 import validate from './validateInfo';
 import './Form.css';
 
-const SignUp = (submitForm) => {
+const SignUp = (submitForm) =>  {
 
-const {handleChange, values, handleSubmit, errors} = UseForm(submitForm, validate);
+    const { handleChange, values, handleSubmit, errors } = UseForm(submitForm, validate);
 
     return (
         <div className="form-content-right">
-            <form className="form" onSubmit={handleSubmit} >
+            <form className="form" onSubmit={handleSubmit}>
                 <h1>
                     Welcome.
                 </h1>
@@ -18,12 +18,12 @@ const {handleChange, values, handleSubmit, errors} = UseForm(submitForm, validat
                     <input id="name" type="text" name="username" className="form-input" placeholder="Enter your username" value={values.username} onChange={handleChange}></input>
                     {errors.username && <p>{errors.username}</p>}
                 </div>
-               <div className="form-inputs">
+                <div className="form-inputs">
                     <label htmlFor="email" className="form-label">Email:</label>
                     <input id="email" type="email" name="email" className="form-input" placeholder="Enter your Email" value={values.username} onChange={handleChange}></input>
                     {errors.email && <p>{errors.email}</p>}
                 </div>
-               <div className="form-inputs">
+                <div className="form-inputs">
                     <label htmlFor="password" className="form-label">Password:</label>
                     <input id="password" type="password" name="password" className="form-input" placeholder="Enter your Password" value={values.username} onChange={handleChange}></input>
                     {errors.password && <p>{errors.password}</p>}
