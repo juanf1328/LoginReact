@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+//import { render } from 'react';
 
 
 
 
-function Login({ login, error, SignUp }) {
+function Login(login, error) {
 	const [details, setDetails] = useState({username: "", email: "", password: ""});
 
 	const submitHandler = e => {
@@ -11,7 +12,43 @@ function Login({ login, error, SignUp }) {
 
 		login(details);
 	}
+/*const adminUser = {
+	email: this.email,
+	password: this.password
+  }
+  const [user, setUser] = useState({name: "", email: ""});
+  const [error, setError] = useState("");
 
+  const login = details => {
+    console.log(details);
+
+   if (details.email === adminUser.email && details.password === adminUser.password){
+      console.log("Logged in");
+      setUser({
+        name: details.name,
+        email: details.email
+      });
+    } else {
+      console.log("Details do not match!");
+      setError("Details do not match!");
+    }
+  }
+*/
+ /*const Logout = () => {
+    setUser ({ name: "", email: ""});
+  }
+
+ 
+ /*const SignUpp = (props) => {
+    const [isLoading, setIsLoading] = useState(false)
+    const buttonHandler = () => {
+      setIsLoading(current => !current)
+    }
+  
+    useEffect( () => {
+      console.log(isLoading);
+  }, [isLoading]);*/
+ 
 
 
 	return (
@@ -34,11 +71,12 @@ function Login({ login, error, SignUp }) {
 				<div className="form-group">
 					<input type="submit" value="Login"/>	
 				</div>
-				<button onClick={this.SignUp}></button>
+				
 			
 			</div>
 		</form>
 		);
-}
+	}
+
 
 export default Login;

@@ -1,9 +1,10 @@
 import React from 'react';
 import SignUp from './formSignUp';
-import Login from './components/Login';
+//import Login from './components/Login';
 import { useState } from 'react';
+import Login from './components/Login';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { render } from 'react';
+//import { render } from 'react';
 
 
 
@@ -34,38 +35,19 @@ function App() {
  const Logout = () => {
     setUser ({ name: "", email: ""});
   }
-
- 
- /*const SignUpp = (props) => {
-    const [isLoading, setIsLoading] = useState(false)
-    const buttonHandler = () => {
-      setIsLoading(current => !current)
-    }
-  
-    useEffect( () => {
-      console.log(isLoading);
-  }, [isLoading]);
- */
-
-  render() 
-    return <>
-      
+   
+  return(
     <BrowserRouter>
-   <div className="app">
-        <Routes> 
-          <Route path="/Login" element={<Login/>}/>
-          <Route path="/formSignUp" element={<SignUp/>}/>
-        </Routes>
-      
-    <h2>Welcome, <span>{user.name}</span></h2>
-          <button onClick={Logout}>Logout</button>
-  </div>
-</BrowserRouter>
-  ) : (
-    <Login login={login} error={error} SignUp={SignUp} />
-    );
-    </>
-
-  }
+    <div className="App">
+         <Routes>
+            <Route path="/" element= {<Logout/> } />
+            <Route path="/formSignUp" element= {<SignUp/> } />
+            <Route path="components/Login" element= {<Login/> } />
+          </Routes>
+      </div>
+    </BrowserRouter>
+ 
+  );
+ }
 
 export default App;
